@@ -1,0 +1,17 @@
+body{
+    background: url("../img/rojo.jpg");
+}
+header h1{
+    background-color: #fa1c1c;
+    color: white;
+}
+header nav{
+    background-color: #fa1c1c;
+}
+header nav a:hover{
+    background-color: #fa1c1c;
+}
+section article button{
+    background-color: #fa1c1c;
+    color: white;
+}

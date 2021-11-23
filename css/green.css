@@ -1,0 +1,17 @@
+body{
+    background: url("../img/hojas.jpg");
+}
+header h1{
+    background-color: darkgreen;
+    color: white;
+}
+header nav{
+    background-color: black;
+}
+header nav a:hover{
+    background-color: darkgreen;
+}
+section article button{
+    background-color: #06680f;
+    color: white;
+}
