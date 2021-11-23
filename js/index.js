@@ -5,18 +5,18 @@ $(document).ready(function (){
         preloadImages: 'all'
         //slideWidth: 1200
     });
-    console.log("hola mundo");
+
     info();
-    /*
+
     $('.leermas').click(function (e){
         var id = $(this).data('id');
-        console.log(id);
-       fleermas(id);
-    });*/
+        fleermas(id);
+    });
 });
 
 function fleermas(id){
     if(($('.parrafo'+id).css('display')) != 'inline'){
+        $('.parrafo'+id).attr('style','text-align: justify');
         $('.parrafo'+id).css('display','inline');
         $('.leermas[data-id="'+id+'"]').html('Menos...');
     }else{
@@ -68,19 +68,19 @@ function info(){
             Fecha: fecha.getDate()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear()
         },
     ];
-    console.log(posts);
+    //console.log(posts);
     posts.forEach((item,index)=>{
         var post = `
             <article>
             <h1>${item.title}</h1>
-            <span className="span">${item.Fecha}</span>
-            <p class="akskaksmk">
+            <span class="span">${item.Fecha}</span>
+            <p>
                 ${item.article}
             </p>
-            <p className="parrafo${index+1}" style="display: none">
+            <p id="parrafo${index+1}" class="parrafo${index+1}" style="display: none; line-height: 22px;">
                 ${item.article}
             </p>
-            <button className="leermas" onclick="fleermas(${index+1});" >Leer mas...</button>
+            <button class="leermas" data-id="${index+1}">Leer mas...</button>
             </article> `
         ;
 
