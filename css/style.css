@@ -42,7 +42,7 @@ header #titulo{
         display: flex;
         flex-direction: row;
     }
-        section #articulos{
+        section .articulos{
             display: flex;
             flex-direction: column;
             flex: 1 1 70%;
@@ -102,6 +102,12 @@ header #titulo{
                     cursor: pointer;
                 }
 
+section #articulos2{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 70%;
+}
 #temas{
     display: flex;
     flex-direction: column;
@@ -122,3 +128,12 @@ header #titulo{
 }
 #to-green{background-color: green;} #to-blue{background-color: blue;}
 #to-red{background-color: red;} #to-oscuro{background-color: black;}
+
+#boton-arriba{
+    padding: 5px;
+    width: 10%;
+}
+#boton-arriba button{
+    background-color: #e1dada;
+    border: 1px solid red;
+}

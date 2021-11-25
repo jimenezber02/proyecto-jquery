@@ -1,12 +1,7 @@
 $(document).ready(function (){
-    $('.slider').bxSlider({
-        mode: 'fade',
-        captions: true,
-        preloadImages: 'all'
-        //slideWidth: 1200
-    });
 
     info();
+    $('#acordeon').accordion();
 
     $('.leermas').click(function (e){
         var id = $(this).data('id');
@@ -25,8 +20,8 @@ $(document).ready(function (){
 
     $('#contacto').submit(function (e){
         var form = $('#contacto');
-       localStorage.setItem('nombre',$('#nombre').val());
-       localStorage.setItem('apellido',$('#apellido').val());
+        localStorage.setItem('nombre',$('#nombre').val());
+        localStorage.setItem('apellido',$('#apellido').val());
     });
     var usuario = localStorage.getItem('nombre');
     if((usuario!=null) && (usuario!=undefined)){
@@ -37,9 +32,9 @@ $(document).ready(function (){
         $('#sesion').hide();
 
         $('#salir').click(function (){
-           localStorage.clear();
-           location.reload();
-           $('#sesion').show();
+            localStorage.clear();
+            location.reload();
+            $('#sesion').show();
         });
     }
 
@@ -125,8 +120,8 @@ function cambia_tema(){
 
     var boton_temas = $('#temas div');
     boton_temas.each((index,item)=>{
-       $(item).click(function (){
-           tema_actual.attr('href','css/'+ vector_temas[index] + '.css');
-       });
+        $(item).click(function (){
+            tema_actual.attr('href','css/'+ vector_temas[index] + '.css');
+        });
     });
 }

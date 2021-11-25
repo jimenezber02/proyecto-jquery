@@ -35,7 +35,7 @@
                 <a href="">Inicio</a>
                 <a href="">Calculadora</a>
                 <a href="">Jueguito</a>
-                <a href="">sobre mi</a>
+                <a href="about.html">sobre mi</a>
             </nav>
             <!-- Fin de menú -->
         </header><!--Fin de encabezado -->
@@ -50,26 +50,36 @@
 
         <!-- Sección de artículos -->
         <section>
-            <div id="articulos">
+            <div class="articulos" id="articulos">
                 <!-- Dinàmicamente con javascript -->
             </div>
             <aside>
                 <h4>Quien soy ?</h4>
                 <img src="img/caracol.jpg" alt="">
-                <div>
-                    <h4>Contacto</h4>
+                <p>
+
+                </p>
+                <div id="sesion">
+                    <h4>Iniciar sesion</h4>
                     <form id="contacto" action="">
                         <label for="nombre">Tu nombre</label>
                         <input type="text" required name="nombre" id="nombre">
                         <label for="apellido">Tu apellido</label>
                         <input type="text" required name="apellido" id="apellido">
-                        <label for="correo">Tu correo</label>
-                        <input type="text" required name="correo" id="correo">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" required name="pass" id="pass">
 
                         <input type="submit" id="submit" value="Enviar" onsubmit="return false;">
                     </form>
                 </div>
             </aside>
+        </section>
+        <section>
+            <div id="articulos2">
+                <div id="boton-arriba">
+                    <button>Volver arriba</button>
+                </div>
+            </div>
         </section>
         <!-- Fin de sección de artículos -->
     </div><!-- Fin de caja de contenido principal -->
