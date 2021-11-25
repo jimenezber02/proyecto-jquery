@@ -92,12 +92,12 @@ function info(){
 
 function cambia_tema(){
     var vector_temas = ['green','modo_oscuro_xd','red','blue'];
-    var tema = $('#theme');
+    var tema_actual = $('#theme');
 
-    var temas = $('#temas div');
-    temas.each((index,item)=>{
+    var boton_temas = $('#temas div');
+    boton_temas.each((index,item)=>{
        $(item).click(function (){
-           tema.attr('href','css/'+ vector_temas[index] + '.css');
+           tema_actual.attr('href','css/'+ vector_temas[index] + '.css');
        });
     });
 }
