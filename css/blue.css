@@ -1,0 +1,17 @@
+body{
+    background: url("../img/cielo.jpg");
+}
+header h1{
+    background-color: blue;
+    color: white;
+}
+header nav{
+    background-color: darkblue;
+}
+header nav a:hover{
+    background-color: blue;
+}
+section article button{
+    background-color: blue;
+    color: white;
+}

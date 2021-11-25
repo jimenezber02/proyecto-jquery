@@ -113,12 +113,12 @@ header #titulo{
     top: 40%;
     background: rgba(0,0,0,.5);
 }
-#to-green,#to-red,#to-blue{
+#to-green,#to-red,#to-blue,#to-oscuro{
     width: 70%;
     height: 35px;
     background-color: #fa1c1c;
     border: 1px solid white;
-    cursor: cell;
+    cursor: pointer;
 }
 #to-green{background-color: green;} #to-blue{background-color: blue;}
-#to-red{background-color: red;}
+#to-red{background-color: red;} #to-oscuro{background-color: black;}

@@ -12,6 +12,8 @@ $(document).ready(function (){
         var id = $(this).data('id');
         fleermas(id);
     });
+
+    cambia_tema();
 });
 
 function fleermas(id){
@@ -68,7 +70,7 @@ function info(){
             Fecha: fecha.getDate()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear()
         },
     ];
-    //console.log(posts);
+
     posts.forEach((item,index)=>{
         var post = `
             <article>
@@ -86,5 +88,16 @@ function info(){
 
         $('#articulos').append(post);
     });
+}
 
+function cambia_tema(){
+    var vector_temas = ['green','modo_oscuro_xd','red','blue'];
+    var tema = $('#theme');
+
+    var temas = $('#temas div');
+    temas.each((index,item)=>{
+       $(item).click(function (){
+           tema.attr('href','css/'+ vector_temas[index] + '.css');
+       });
+    });
 }
