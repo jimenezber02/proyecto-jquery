@@ -35,6 +35,9 @@ header #titulo{
     section .slider{
         width: 100%;
     }
+    section .about{
+        width: 60%;
+    }
     section .bx-wrapper, .bx-viewport{
         height: 250px!important;
     }
@@ -100,6 +103,10 @@ header #titulo{
                     margin-top: 3px;
                     width: 30%;
                     cursor: pointer;
+                }
+                aside form .form-error{
+                    background-color: #fa1c1c!important;
+                    color: white;
                 }
 
 section #articulos2{

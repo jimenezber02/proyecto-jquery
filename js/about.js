@@ -18,10 +18,14 @@ $(document).ready(function (){
         return false;
     });
 
-    $('#contacto').submit(function (e){
+    $('#submit').click(function (e){
+        console.log('btn envuar');
         var form = $('#contacto');
-        localStorage.setItem('nombre',$('#nombre').val());
-        localStorage.setItem('apellido',$('#apellido').val());
+        if(form.validate()){
+            console.log('valido');
+            //localStorage.setItem('nombre',$('#nombre').val());
+            //localStorage.setItem('apellido',$('#apellido').val());
+        }
     });
     var usuario = localStorage.getItem('nombre');
     if((usuario!=null) && (usuario!=undefined)){
@@ -37,7 +41,11 @@ $(document).ready(function (){
             $('#sesion').show();
         });
     }
-
+    $.validate({
+       lang:'es',
+        errorMessagePosition: 'top',
+        scrollToTopOnError: true
+    });
 });
 
 function fleermas(id){
