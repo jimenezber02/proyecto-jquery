@@ -9,7 +9,8 @@ header nav{
     background-color: #fa1c1c;
 }
 header nav a:hover{
-    background-color: #fa1c1c;
+    background-color: #5e0404;
+    color: white;
 }
 section article button{
     background-color: #fa1c1c;

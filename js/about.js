@@ -21,10 +21,41 @@ $(document).ready(function (){
     $('#submit').click(function (e){
         console.log('btn envuar');
         var form = $('#contacto');
-        if(form.validate()){
+        /*$.validate({
+            lang:'es',
+            errorMessagePosition: 'top',
+            scrollToTopOnError: true
+        });*/
+        form.validate({
+           rules:{
+               nombre:{
+                   required: true
+               },
+               apellido:{
+                   required: true
+               },
+               password:{
+                   required: true
+               }
+           },
+            messages:{
+               nombre:{
+                    required: "Nombre no válido"
+               },
+                apellido:{
+                    required: "Apellido no válido"
+                },
+                password:{
+                    required: "Contraseña no válido"
+                }
+            }
+        });
+        if(form.valid()){
             console.log('valido');
             //localStorage.setItem('nombre',$('#nombre').val());
             //localStorage.setItem('apellido',$('#apellido').val());
+        }else{
+            console.log('invalido');
         }
     });
     var usuario = localStorage.getItem('nombre');
@@ -41,11 +72,7 @@ $(document).ready(function (){
             $('#sesion').show();
         });
     }
-    $.validate({
-       lang:'es',
-        errorMessagePosition: 'top',
-        scrollToTopOnError: true
-    });
+
 });
 
 function fleermas(id){
@@ -64,56 +91,52 @@ function info(){
     var posts = [
         {
             title: 'Articulo 1',
-            article: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the\n' +
-                '            industry\'s standard dummy\n' +
-                '            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type\n' +
-                '            specimen book. It has\n' +
-                '            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially\n' +
-                '            unchanged. It was\n' +
-                '            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more\n' +
-                '            recently with desktop\n' +
-                '            publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-            Fecha: fecha.getDate()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear()
-        },
-        {
-            title: 'Articulo 2',
-            article: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the\n' +
-                '            industry\'s standard dummy\n' +
-                '            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type\n' +
-                '            specimen book. It has\n' +
-                '            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially\n' +
-                '            unchanged. It was\n' +
-                '            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more\n' +
-                '            recently with desktop\n' +
-                '            publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-            Fecha: fecha.getDate()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear()
-        },
-        {
-            title: 'Articulo 3',
-            article: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the\n' +
-                '            industry\'s standard dummy\n' +
-                '            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type\n' +
-                '            specimen book. It has\n' +
-                '            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially\n' +
-                '            unchanged. It was\n' +
-                '            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more\n' +
-                '            recently with desktop\n' +
-                '            publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
             Fecha: fecha.getDate()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear()
         },
     ];
 
+    $('#acordeon').accordion();
+    var data = $('.about .articulos');
+
+    posts[0].article = data.html();
+
+    console.log(posts);
     posts.forEach((item,index)=>{
         var post = `
             <article>
             <h1>${item.title}</h1>
             <span class="span">${item.Fecha}</span>
-            <p>
-                ${item.article}
-            </p>
-            <p id="parrafo${index+1}" class="parrafo${index+1}" style="display: none; line-height: 22px;">
-                ${item.article}
-            </p>
+            <div id="acordeon">
+                <h3>Quienes somos</h3>
+                <div>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry standard dummy
+                    </p>
+                </div>
+                <h3>Dirección</h3>
+                <div>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry standard dummy
+                    </p>
+                </div>
+                <h3>Formaci&oacute;n</h3>
+                <div>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry standard dummy
+                    </p>
+                </div>
+                <h3>Tecnolog&iacute;as</h3>
+                <div>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry standard dummy
+                    </p>
+                </div>
+            </div>
+           
             <button class="leermas" data-id="${index+1}">Leer mas...</button>
             </article> `
         ;

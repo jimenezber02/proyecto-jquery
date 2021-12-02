@@ -104,10 +104,7 @@ header #titulo{
                     width: 30%;
                     cursor: pointer;
                 }
-                aside form .form-error{
-                    background-color: #fa1c1c!important;
-                    color: white;
-                }
+
 
 section #articulos2{
     display: flex;

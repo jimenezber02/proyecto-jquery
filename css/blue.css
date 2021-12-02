@@ -10,6 +10,7 @@ header nav{
 }
 header nav a:hover{
     background-color: blue;
+    color: white;
 }
 section article button{
     background-color: blue;

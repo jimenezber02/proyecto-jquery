@@ -13,6 +13,7 @@ header nav{
 }
 header nav a:hover{
     background-color: darkgreen;
+    color: white;
 }
 section article h1{
     color: white;
@@ -29,4 +30,10 @@ section article button{
 }
 aside{
     color: white;
+}
+
+aside form .error{
+    color: white;
+    font-family: "Harlow Solid Italic";
+    margin-bottom: 5px;
 }
