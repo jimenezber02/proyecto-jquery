@@ -98,7 +98,7 @@ function info(){
     $('#acordeon').accordion();
     var data = $('.about .articulos');
 
-    posts[0].article = data.html();
+    //posts[0].article = data.html();
 
     console.log(posts);
     posts.forEach((item,index)=>{
@@ -136,8 +136,6 @@ function info(){
                     </p>
                 </div>
             </div>
-           
-            <button class="leermas" data-id="${index+1}">Leer mas...</button>
             </article> `
         ;
 
