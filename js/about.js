@@ -52,8 +52,9 @@ $(document).ready(function (){
         });
         if(form.valid()){
             console.log('valido');
-            //localStorage.setItem('nombre',$('#nombre').val());
-            //localStorage.setItem('apellido',$('#apellido').val());
+            localStorage.setItem('nombre',$('#nombre').val());
+            localStorage.setItem('apellido',$('#apellido').val());
+            location.reload();
         }else{
             console.log('invalido');
         }
@@ -98,7 +99,7 @@ function info(){
     $('#acordeon').accordion();
     var data = $('.about .articulos');
 
-    posts[0].article = data.html();
+    //posts[0].article = data.html();
 
     console.log(posts);
     posts.forEach((item,index)=>{
@@ -135,13 +136,12 @@ function info(){
                         industry standard dummy
                     </p>
                 </div>
-            </div>
-           
-            <button class="leermas" data-id="${index+1}">Leer mas...</button>
+            </div>         
+        
             </article> `
         ;
 
-        $('#articulos').append(post);
+        $('#about-articulos').append(post);
     });
 }
 
