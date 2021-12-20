@@ -103,7 +103,7 @@ function info(){
     console.log(posts);
     posts.forEach((item,index)=>{
         var post = `
-            <article>
+            
             <h1>${item.title}</h1>
             <span class="span">${item.Fecha}</span>
             <div id="acordeon">
@@ -136,7 +136,7 @@ function info(){
                     </p>
                 </div>
             </div>
-            </article> `
+            `
         ;
 
         $('#articulos').append(post);
@@ -150,7 +150,7 @@ function cambia_tema(){
     var boton_temas = $('#temas div');
     boton_temas.each((index,item)=>{
         $(item).click(function (){
-            tema_actual.attr('href','css/'+ vector_temas[index] + '.css');
+            tema_actual.attr('href','../css/'+ vector_temas[index] + '.css');
         });
     });
 }
