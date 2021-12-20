@@ -23,40 +23,10 @@ $(document).ready(function (){
         return false;
     });
 
-    $('#submit').click(function (e){
+    $('#contacto').submit(function (e){
         var form = $('#contacto');
-        form.validate({
-            rules:{
-                nombre:{
-                    required: true
-                },
-                apellido:{
-                    required: true
-                },
-                password:{
-                    required: true
-                }
-            },
-            messages:{
-                nombre:{
-                    required: "Nombre no válido"
-                },
-                apellido:{
-                    required: "Apellido no válido"
-                },
-                password:{
-                    required: "Contraseña no válido"
-                }
-            }
-        });
-        if(form.valid()){
-            console.log('valido');
-            localStorage.setItem('nombre',$('#nombre').val());
-            localStorage.setItem('apellido',$('#apellido').val());
-            location.reload();
-        }else{
-            console.log('invalido');
-        }
+       localStorage.setItem('nombre',$('#nombre').val());
+       localStorage.setItem('apellido',$('#apellido').val());
     });
     var usuario = localStorage.getItem('nombre');
     if((usuario!=null) && (usuario!=undefined)){
