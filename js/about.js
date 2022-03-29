@@ -52,26 +52,27 @@ $(document).ready(function (){
         });
         if(form.valid()){
             console.log('valido');
-            //localStorage.setItem('nombre',$('#nombre').val());
-            //localStorage.setItem('apellido',$('#apellido').val());
+            localStorage.setItem('nombre',$('#nombre').val());
+            localStorage.setItem('apellido',$('#apellido').val());
         }else{
             console.log('invalido');
         }
+        var usuario = localStorage.getItem('nombre');
+        console.log(usuario);
+        if((usuario!=null) && (usuario!=undefined)){
+            var p = $('aside p');
+            p.html('Bienvenido '+usuario);
+            p.append('</br><a href="#" id="salir">Salir</a>');
+
+            $('#sesion').hide();
+
+            $('#salir').click(function (){
+                localStorage.clear();
+                location.reload();
+                $('#sesion').show();
+            });
+        }
     });
-    var usuario = localStorage.getItem('nombre');
-    if((usuario!=null) && (usuario!=undefined)){
-        var p = $('aside p');
-        p.html('Bienvenido '+usuario);
-        p.append('</br><a href="#" id="salir">Salir</a>');
-
-        $('#sesion').hide();
-
-        $('#salir').click(function (){
-            localStorage.clear();
-            location.reload();
-            $('#sesion').show();
-        });
-    }
 
 });
 
