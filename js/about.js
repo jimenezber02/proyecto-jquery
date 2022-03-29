@@ -139,7 +139,7 @@ function info(){
             `
         ;
 
-        $('#articulos').append(post);
+        $('#about-articulos').append(post);
     });
 }
 

@@ -1,4 +1,5 @@
 $(document).ready(function (){
+    $('#acordeon').accordion();
     $('.slider').bxSlider({
         mode: 'fade',
         captions: true,
